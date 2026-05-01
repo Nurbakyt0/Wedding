@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Kazakh online event invitation template">
+  <title>Toi Invitation Template</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div class="welcome-screen" id="welcomeScreen" aria-live="polite">
+    <div class="welcome-mark"></div>
+    <p>Сізге арнайы шақыру</p>
+  </div>
+
+  <main class="page-shell">
+    <section class="hero" id="hero">
+      <div class="hero-bg" data-bg="heroImage"></div>
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <p class="eyebrow" data-text="eventType"></p>
+        <h1 data-text="mainTitle"></h1>
+        <time class="hero-date" data-date-display></time>
+        <button class="btn btn-primary" type="button" data-scroll-to="#invitation">Шақыруды ашу</button>
+      </div>
+    </section>
+
+    <section class="section invitation reveal" id="invitation">
+      <div class="section-inner narrow">
+        <p class="eyebrow" data-text="subtitle"></p>
+        <div class="ornament" aria-hidden="true"></div>
+        <p class="lead" data-text="invitationTextKz"></p>
+        <p class="muted-text" data-text="invitationTextRu"></p>
+      </div>
+    </section>
+
+    <section class="section photo-section reveal">
+      <div class="section-inner split">
+        <div class="image-frame">
+          <img data-img="coupleImage" alt="Main event photo" loading="lazy">
+        </div>
+        <div>
+          <p class="eyebrow" data-text="coupleEyebrow"></p>
+          <h2 data-text="coupleTitle"></h2>
+          <p class="muted-text" data-text="coupleText"></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section countdown-section reveal" id="countdown">
+      <div class="section-inner">
+        <p class="eyebrow">Тойға дейін</p>
+        <div class="countdown-grid" aria-live="polite">
+          <div class="countdown-card"><strong data-count="days">0</strong><span>Күн</span></div>
+          <div class="countdown-card"><strong data-count="hours">0</strong><span>Сағат</span></div>
+          <div class="countdown-card"><strong data-count="minutes">0</strong><span>Минут</span></div>
+          <div class="countdown-card"><strong data-count="seconds">0</strong><span>Секунд</span></div>
+        </div>
+        <p class="event-started" data-countdown-message hidden>Той басталды!</p>
+      </div>
+    </section>
+
+    <section class="section details reveal">
+      <div class="section-inner">
+        <p class="eyebrow">Ақпарат / Детали</p>
+        <div class="details-grid">
+          <article class="info-card">
+            <span>Күні</span>
+            <strong data-date-display></strong>
+          </article>
+          <article class="info-card">
+            <span>Уақыты</span>
+            <strong data-text="time"></strong>
+          </article>
+          <article class="info-card">
+            <span>Мекенжай</span>
+            <strong data-text="venueName"></strong>
+            <small data-text="venueAddress"></small>
+          </article>
+          <article class="info-card">
+            <span>Dress code</span>
+            <strong data-text="dressCode"></strong>
+          </article>
+          <article class="info-card wide">
+            <span>Той иелері</span>
+            <strong data-text="hosts"></strong>
+          </article>
+        </div>
+        <a class="btn btn-outline" data-map-link href="#" target="_blank" rel="noopener">Картадан көру / Посмотреть на карте</a>
+      </div>
+    </section>
+
+    <section class="section program reveal">
+      <div class="section-inner narrow">
+        <p class="eyebrow">Бағдарлама</p>
+        <div class="timeline" id="programList"></div>
+      </div>
+    </section>
+
+    <section class="middle-banner reveal">
+      <div class="middle-bg" data-bg="middleImage"></div>
+      <div class="middle-overlay"></div>
+      <blockquote data-text="middleQuote"></blockquote>
+    </section>
+
+    <section class="section gallery reveal">
+      <div class="section-inner">
+        <p class="eyebrow">Галерея</p>
+        <div class="gallery-grid" id="galleryGrid"></div>
+      </div>
+    </section>
+
+    <section class="section rsvp reveal" id="rsvp">
+      <div class="section-inner narrow">
+        <p class="eyebrow">RSVP</p>
+        <h2>Келетініңізді растаңыз</h2>
+        <form class="rsvp-form" id="rsvpForm">
+          <label>
+            <span>Атыңыз / Имя</span>
+            <input type="text" name="name" required autocomplete="name">
+          </label>
+          <label>
+            <span>Телефон</span>
+            <input type="tel" name="phone" required autocomplete="tel">
+          </label>
+          <label>
+            <span>Қатысу / Участие</span>
+            <select name="attendance" required>
+              <option value="Келемін / Приду">Келемін / Приду</option>
+              <option value="Келе алмаймын / Не приду">Келе алмаймын / Не приду</option>
+            </select>
+          </label>
+          <label>
+            <span>Қонақ саны / Количество гостей</span>
+            <input type="number" name="guests" min="1" max="20" value="1" required>
+          </label>
+          <label>
+            <span>Пікір / Комментарий</span>
+            <textarea name="comment" rows="4"></textarea>
+          </label>
+          <button class="btn btn-primary" type="submit">Жіберу / Отправить</button>
+          <p class="form-message" id="formMessage" role="status"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Made with love</p>
+  </footer>
+
+  <button class="music-button" id="musicButton" type="button" aria-label="Play music" aria-pressed="false">
+    <span class="icon-play" aria-hidden="true"></span>
+    <span class="icon-pause" aria-hidden="true"></span>
+  </button>
+
+  <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-label="Gallery image">
+    <button class="lightbox-close" type="button" aria-label="Close gallery">&times;</button>
+    <img src="" alt="">
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+</html>
